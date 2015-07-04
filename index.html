@@ -37,7 +37,7 @@
 <p>In this article we make three contributions: </p>
 
 <ul>
-<li>We propose a criteria to classify popular and very popular systems at GitHub.</li>
+<li>We propose a criteria to classify <strong>popular</strong> and <strong>very popular</strong> systems at GitHub.</li>
 <li>We propose four growth patterns to describe the evolution of the number of stars of a system over time. </li>
 <li>We check the importance of the stargazers measure, by correlating the number of stars with forks and client usage </li>
 </ul>
@@ -53,7 +53,9 @@
 
 <p>JavaScript is the language with the highest number of popular systems; in our sample of 1,000 JavaScript systems, the first quartile (bottom-25%), second quartile (median), and third quartile (top-25%) values are: 1,603, 2,274, and 3,820 stars. The median number of stars of the next five languages are: Ruby (793 stars), Objective-C (766 stars), Python (676 stars), Java (653 stars), and PHP (403 stars). </p>
 
-<p>We consider popular the top-10% systems with more stars in our sample of 24,000 systems, which requires a system to have at least 1,459 stars (on May, 1st, 2015). The following table shows the number of popular systems on each language. Furthermore, we call very popular the top-1% systems with more stars, which requires a system to have at least 19,570 stars. The following table also shows the number of very popular systems, per programming language. Among these systems, 13 systems are implemented in JavaScript. </p>
+<p>We consider <strong>popular</strong> the top-10% systems with more stars in our sample of 24,000 systems. The following table shows the number of popular systems on each language. Furthermore, we call <strong>very popular</strong> the top-1% systems with more stars. The following table also shows the number of very popular systems, per programming language. </p>
+
+<p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/popular.png?raw=true" alt=""></p>
 
 <h3>
 <a id="popularity-growth-patterns" class="anchor" href="#popularity-growth-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popularity Growth Patterns</h3>
@@ -67,17 +69,14 @@ is 52 (aka as NEW ). We also define that RT OP and RBOT T OM are respectively th
 
 <p>(RBOT T OM − RT OP ) &lt; 0.25</p>
 
-<p>The following figures show three examples of such systems: <code>rails/rails</code>, <code>facebook/Shimmer</code>, and <code>Automattic/socket.io</code>.</p>
+<p>The following figures show three examples with a sustainable growth in their number of stars.</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/sustainable.png?raw=true" alt=""></p>
 
 <p><strong>Fast Growth:</strong> These are trending systems, which gained stars in a quantity that resulted in a relevant increase in their position in the ranking of popular systems, as captured by the following relation:
 (ROLD − RNOW ) &gt; 1 ∧ (Rt+1 ≤ Rt) in at least 90% of the weeks t</p>
 
-<p>Table 2 shows the number of such systems per language. As can be observed, 100 systems (5%)
-matched our definition for fast growth, including 44 systems in JavaScript and 18 systems
-in Java. Figures 3d to 3f show three examples of such systems: angular/angular.js,
-docker/compose, and apache/spark.</p>
+<p>The following figures show three examples with a fast growth in their number of stars.</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/fast.png?raw=true" alt=""></p>
 
@@ -85,29 +84,34 @@ docker/compose, and apache/spark.</p>
 experienced a relevant decrease in their rank position, as represented by the following relation:
 (RNOW − ROLD) &gt; 1 ∧ (Rt+1 ≥ Rt) in at least 90% of the weeks t</p>
 
-<p>Table 2 shows the number of systems with slow growth per language. As presented in this table, 12
-systems (0.5%) matched our definition for this pattern. Figures 3g to 3i show three examples
-of such systems: jquery/jquery, jquery-ui-bootstrap/jquery-ui-bootstrap, and
-django/django-old.</p>
+<p>The following figures show three examples with a slow growth in their number of stars.</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/slow.png?raw=true" alt=""></p>
 
-<p><strong>Viral Growth:</strong> These systems experience a massive growth in their number of stars in a short period of time. Typically, viral growth results from word-of-mouth propagation in social networks (Twitter, Facebook, etc) or social news sites (Hacker News, Slashdot, Reddit, etc). In this paper, we consider that viral growth happens when a systems receives most of its stars (i.e., &gt; 50%) in a single week. Table 2 also shows the number of popular systems classified as viral. We found 37 viral systems (2%) and JavaScript is the language with the highest number of such systems (13 systems). Figures 3j to 3k show three examples of systems with a viral growth. We can see that they received more than 1,300 stars in a single week, and very few stars (if any) in the other weeks. </p>
+<p><strong>Viral Growth:</strong> These systems experience a massive growth in their number of stars in a short period of time. Typically, viral growth results from word-of-mouth propagation in social networks (Twitter, Facebook, etc) or social news sites (Hacker News, Slashdot, Reddit, etc). We consider that viral growth happens when a systems receives most of its stars (i.e., &gt; 50%) in a single week. </p>
+
+<p>The following figures show three examples with a slow growth in their number of stars.</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/viral.png?raw=true" alt=""></p>
+
+<p>The following table shows the number of systems with a sustainable, fast, slow, and viral growth per programming language.</p>
+
+<p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/growthpatterns.png?raw=true" alt=""></p>
 
 <h3>
 <a id="correlating-popularity-with-forks-and-usage" class="anchor" href="#correlating-popularity-with-forks-and-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlating Popularity with Forks and Usage</h3>
 
 <p>To clarify the credibility of the number of stars as measure for a system’s popularity, we investigate the correlation between this measure and two other ones: number of forks and number of clients.</p>
 
-<p><strong>Forks:</strong> Figure 4a shows plots correlating a system popularity and its number of forks. A logarithm scale is used in both axes. The line represents the identity relation: below the line are the systems with more stars than forks, and above the
-line the opposite. Two facts can be observed in this figure. First, there is a strong positive correlation between stars and forks (Spearman rank correlation coefficient = 0.55). Second, only a few systems have more forks than stars. As examples, we have a repository that just provides an example for forking a repository on GitHub (octocat/SpoonKnife) and a
-popular puzzle game (gabrielecirulli/2048), whose success motivated many forks with variations of the original implementation. Since the game can be downloaded directly from the web, we hypothesize that it receives most users’s feedback in the web and not on GitHub.</p>
+<p><strong>Forks:</strong> The following figure shows plots correlating a system popularity and its number of forks. A logarithm scale is used in both axes. The line represents the identity relation: below the line are the systems with more stars than forks, and above the line the opposite. We can see that there is a strong positive correlation between stars and forks (Spearman rank correlation coefficient = 0.55). </p>
+
+<p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/forks.png?raw=true" alt=""></p>
 
 <p><strong>Clients:</strong> To correlate client usage and stars, we focus on a restricted set of applications, composed by Node.js based libraries hosted on the NPM registry. We first retrieved the number of dependents of the popular JavaScript applications in our dataset, using the NPM API. We then manually inspected the top-100 applications in terms of dependents to select the
 Node.js-based modules. Figure 4b shows a plot correlating the values we found for number of stars and number of dependents.
 As can be visually observed, there is a strong correlation between these two measures, with a Spearman’s rank correlation coefficient of 0.68.</p>
+
+<p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/clients.png?raw=true" alt=""></p>
 
 <h3>
 <a id="summing-up" class="anchor" href="#summing-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summing UP</h3>
