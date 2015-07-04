@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Tracking-Popularity-GitHub by aserg-ufmg</title>
+    <title>Tracking-Popularity-GitHub by mtov</title>
   </head>
 
   <body>
@@ -23,9 +23,9 @@
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="https://github.com/aserg-ufmg/tracking-github-popularity/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/aserg-ufmg/tracking-github-popularity/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/aserg-ufmg/tracking-github-popularity" id="view-on-github" class="button"><span>View on GitHub</span></a>
+          <a href="https://github.com/mtov/tracking-popularity-github/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/mtov/tracking-popularity-github/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/mtov/tracking-popularity-github" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
         <hr>
@@ -39,7 +39,7 @@
 <ul>
 <li>We propose a criteria to classify <strong>popular</strong> and <strong>very popular</strong> systems at GitHub.</li>
 <li>We propose four growth patterns to describe the evolution of the number of stars of a system over time. </li>
-<li>We check the importance of the stargazers measure, by correlating the number of stars with forks and client usage </li>
+<li>We show the importance of the stargazers measure, by correlating the number of stars with forks and client usage. </li>
 </ul>
 
 <p>We illustrate the application of our framework on a snapshot of GitHub, collected on May, 1st, 2015. </p>
@@ -60,28 +60,30 @@
 <h3>
 <a id="popularity-growth-patterns" class="anchor" href="#popularity-growth-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popularity Growth Patterns</h3>
 
-<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks (one year). In this way, we study 2,138 popular systems (89% of our initial set of popular systems). For a given system, we define that <em>Rt</em> is its rank in our list of popular systems in the week <em>t</em> in a logarithm scale (base 2). The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems. The rank of the most popular system is 1. The earliest week is the week 1 (aka as <em>OLD</em>) and the latest one is 52 (aka as <em>NEW</em>). We also define that <em>R-TOP</em> and <em>R-BOTTOM</em> are respectively the highest (best) and lowest rank (worse) of a system in the interval under analysis.</p>
+<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks. In this way, we study 2,138 popular systems (89% of our initial sample). For a given system, we define that <em>Rt</em> is its rank in the list of popular systems in the week <em>t</em> in a logarithm scale (base 2). The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems. The rank of the most popular system is 1. The earliest week is the week 1 (aka as <em>Old</em>) and the latest one is 52 (aka as <em>New</em>). We also define that <em>RTop</em> and <em>RBottom</em> are respectively the highest (best) and lowest rank (worse) of a system in the interval under analysis.</p>
 
 <p>We propose four patterns of popularity growth: Sustainable, Fast, Slow, and Viral. These patterns are described next:</p>
 
 <p><strong>Sustainable Growth</strong>: These systems sustained their ranking in the period under analysis, i.e., the number of stars they received in an one-year interval was sufficient to preserve their position in the ranking of popular systems. We use the following relation to express a sustainable growth:</p>
 
-<p><em>(R-BOTTOM − R-TOP ) &lt; 0.25</em></p>
+<p><em>(RBottom − RTop ) &lt; 0.25</em></p>
 
-<p>The following figures shows three examples of systems with a sustainable growth in their number of stars.</p>
+<p>The following figures shows three examples of systems with a sustainable growth in their number of stars. </p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/sustainable.png?raw=true" alt=""></p>
 
-<p><strong>Fast Growth:</strong> These are trending systems, which gained stars in a quantity that resulted in a relevant increase in their position in the ranking of popular systems, as captured by the following relation:
-(ROLD − RNOW ) &gt; 1 ∧ (Rt+1 ≤ Rt) in at least 90% of the weeks t</p>
+<p><strong>Fast Growth:</strong> These are trending systems, which gained stars in a quantity that resulted in a relevant increase in their position in the ranking of popular systems, as captured by the following relation:</p>
 
-<p>The following figures shows three examples of systems with a fast growth in their number of stars.</p>
+<p><em>(ROld − RNow ) &gt; 1 ∧ (Rt+1 ≤ Rt)</em> in at least 90% of the weeks <em>t</em></p>
+
+<p>The following figures shows three examples of systems with a fast growth;</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/fast.png?raw=true" alt=""></p>
 
 <p><strong>Slow Growth:</strong> These are systems receiving few stars on each week. As a result, they
-experienced a relevant decrease in their rank position, as represented by the following relation:
-(RNOW − ROLD) &gt; 1 ∧ (Rt+1 ≥ Rt) in at least 90% of the weeks t</p>
+experienced a relevant decrease in their rank position, as represented by the following relation:</p>
+
+<p><em>(RNow − ROld) &gt; 1 ∧ (Rt+1 ≥ Rt)</em> in at least 90% of the weeks <em>t</em></p>
 
 <p>The following figures show three examples of systems with a slow growth in their number of stars.</p>
 
@@ -89,7 +91,7 @@ experienced a relevant decrease in their rank position, as represented by the fo
 
 <p><strong>Viral Growth:</strong> These systems experience a massive growth in their number of stars in a short period of time. Typically, viral growth results from word-of-mouth propagation in social networks (Twitter, Facebook, etc) or social news sites (Hacker News, Slashdot, Reddit, etc). We consider that viral growth happens when a systems receives most of its stars (i.e., &gt; 50%) in a single week. </p>
 
-<p>The following figures show three examples of systems with a viral growth in their number of stars.</p>
+<p>The following figure shows three examples of systems with a viral growth.</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/viral.png?raw=true" alt=""></p>
 
@@ -131,7 +133,7 @@ framework we found that:</p>
         </section>
 
         <footer>
-          Tracking-Popularity-GitHub is maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a><br>
+          Tracking-Popularity-GitHub is maintained by <a href="https://github.com/mtov">mtov</a><br>
           This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
