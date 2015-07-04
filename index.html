@@ -53,21 +53,20 @@
 
 <p>JavaScript is the language with the highest number of popular systems; in our sample of 1,000 JavaScript systems, the first quartile (bottom-25%), second quartile (median), and third quartile (top-25%) values are: 1,603, 2,274, and 3,820 stars. The median number of stars of the next five languages are: Ruby (793 stars), Objective-C (766 stars), Python (676 stars), Java (653 stars), and PHP (403 stars). </p>
 
-<p>We consider <strong>popular</strong> the top-10% systems with more stars in our sample of 24,000 systems. The following table shows the number of popular systems on each language. Furthermore, we call <strong>very popular</strong> the top-1% systems with more stars. The following table also shows the number of very popular systems, per programming language. </p>
+<p>We consider <strong>popular</strong> the top-10% systems with more stars in our sample of 24,000 systems. Furthermore, we call <strong>very popular</strong> the top-1% systems with more stars. The following table shows the number of popular and very popular systems, per programming language. </p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/popular.png?raw=true" alt=""></p>
 
 <h3>
 <a id="popularity-growth-patterns" class="anchor" href="#popularity-growth-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popularity Growth Patterns</h3>
 
-<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks (one year) in order to include reasonable historical data for evaluation. In this way, we study 2,138 popular systems (89% of our initial set of popular systems). For a given system, we define that Rt is its rank in our list of popular systems in the week t in a logarithm scale (base 2). Therefore, log2(1) + 1 ≤ Rt ≤ log2(2, 138) + 1 and 1 ≤ t ≤ 52. The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems, as presented in Figure 2. The rank of the most popular system is 1. The earliest week is the week 1 (aka as OLD) and the latest one
-is 52 (aka as NEW ). We also define that RT OP and RBOT T OM are respectively the highest (best) and lowest rank (worse) of a system in the interval under analysis.</p>
+<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks (one year). In this way, we study 2,138 popular systems (89% of our initial set of popular systems). For a given system, we define that <em>Rt</em> is its rank in our list of popular systems in the week <em>t</em> in a logarithm scale (base 2). The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems. The rank of the most popular system is 1. The earliest week is the week 1 (aka as <em>OLD</em>) and the latest one is 52 (aka as <em>NEW</em>). We also define that <em>R-TOP</em> and <em>R-BOTTOM</em> are respectively the highest (best) and lowest rank (worse) of a system in the interval under analysis.</p>
 
 <p>We propose four patterns of popularity growth: Sustainable, Fast, Slow, and Viral. These patterns are described next:</p>
 
 <p><strong>Sustainable Growth</strong>: These systems sustained their ranking in the period under analysis, i.e., the number of stars they received in an one-year interval was sufficient to preserve their position in the ranking of popular systems. We use the following relation to express a sustainable growth:</p>
 
-<p>(RBOT T OM − RT OP ) &lt; 0.25</p>
+<p><em>(R-BOTTOM − R-TOP ) &lt; 0.25</em></p>
 
 <p>The following figures shows three examples of systems with a sustainable growth in their number of stars.</p>
 
