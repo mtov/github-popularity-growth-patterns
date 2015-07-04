@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Tracking-GitHub-popularity by aserg-ufmg</title>
+    <title>Tracking-GitHub-Popularity by aserg-ufmg</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="inner">
 
         <header>
-          <h1>Tracking-GitHub-popularity</h1>
+          <h1>Tracking-GitHub-Popularity</h1>
           <h2>Tracking GitHub Popularity</h2>
         </header>
 
@@ -47,25 +47,27 @@
 <h3>
 <a id="measuring-popularity" class="anchor" href="#measuring-popularity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Measuring Popularity</h3>
 
-<p>We consider the top-24 programming languages with more repositories in GitHub, which are the languages classified as popular by the GitHub advanced search engine. Figure 1 shows the distribution of the number of stars in the top-1,000 repositories of such languages. JavaScript is the language with the highest number of popular systems; in our sample of
-1,000 JavaScript systems, the first quartile (bottom-25%), second quartile (median), and third quartile (top-25%) values are: 1,603, 2,274, and 3,820 stars. The median number of stars of the next five languages are: Ruby (793 stars), Objective-C (766 stars), Python (676 stars), Java (653 stars), and PHP (403 stars). The five languages with the lowest median
-number of stars are: Haskell (31 stars), Lua (24 stars), ActionScript (20), R (16 stars), and MatLab (4 stars)</p>
+<p>We consider the top-24 programming languages with more repositories in GitHub, which are the languages classified as popular by the GitHub advanced search engine. Figure 1 shows the distribution of the number of stars in the top-1,000 repositories of such languages. </p>
 
-<p>We consider popular the top-10% systems with more stars in our sample of 24,000 systems, which requires a system to have at least 1,459 stars (on May, 1st, 2015). Table 1 shows the number of popular systems on each language. Furthermore, we call very popular the top-1% systems with more stars, which requires a system to have at least 19,570 stars. Table 1 also shows the number of very popular systems, per programming language. Among these systems, 13 systems are implemented in JavaScript. Therefore, 35% of the popular systems are in JavaScript, while the language has 54% of the very popular ones.
-At the time of our analysis, twbs/bootstrap is the most popular repository, followed by angular/angular.js, and mbostock/d3.</p>
+<p><img src="xxx" alt="Stars by programming language (top-1,000 systems, from top-24 popular languages)"></p>
+
+<p>JavaScript is the language with the highest number of popular systems; in our sample of 1,000 JavaScript systems, the first quartile (bottom-25%), second quartile (median), and third quartile (top-25%) values are: 1,603, 2,274, and 3,820 stars. The median number of stars of the next five languages are: Ruby (793 stars), Objective-C (766 stars), Python (676 stars), Java (653 stars), and PHP (403 stars). </p>
+
+<p>We consider popular the top-10% systems with more stars in our sample of 24,000 systems, which requires a system to have at least 1,459 stars (on May, 1st, 2015). The following table shows the number of popular systems on each language. Furthermore, we call very popular the top-1% systems with more stars, which requires a system to have at least 19,570 stars. The following table also shows the number of very popular systems, per programming language. Among these systems, 13 systems are implemented in JavaScript. </p>
 
 <h3>
 <a id="popularity-growth-patterns" class="anchor" href="#popularity-growth-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popularity Growth Patterns</h3>
 
-<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks (one year) in order to include reasonable historical data for evaluation. We also excluded twbs/bootstrap because we could not get all stars obtained by this system in the last 52 weeks. In this way, we study 2,138 popular systems (89% of our initial set of popular systems). For a given system, we define that Rt is its rank in our list of popular systems in the week t in a logarithm scale (base 2). Therefore, log2(1) + 1 ≤ Rt ≤ log2(2, 138) + 1 and 1 ≤ t ≤ 52. The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems, as presented in Figure 2. The rank of the most popular system is 1. The earliest week is the week 1 (aka as OLD) and the latest one
+<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks (one year) in order to include reasonable historical data for evaluation. In this way, we study 2,138 popular systems (89% of our initial set of popular systems). For a given system, we define that Rt is its rank in our list of popular systems in the week t in a logarithm scale (base 2). Therefore, log2(1) + 1 ≤ Rt ≤ log2(2, 138) + 1 and 1 ≤ t ≤ 52. The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems, as presented in Figure 2. The rank of the most popular system is 1. The earliest week is the week 1 (aka as OLD) and the latest one
 is 52 (aka as NEW ). We also define that RT OP and RBOT T OM are respectively the highest (best) and lowest rank (worse) of a system in the interval under analysis.</p>
 
 <p>We propose four patterns of popularity growth: Sustainable, Fast, Slow, and Viral. These patterns are described next:</p>
 
-<p><strong>Sustainable Growth</strong>: These systems sustained their ranking in the period under analysis, i.e., the number of stars they received in an one-year interval was sufficient to preserve their position in the ranking of popular systems. We use the following relation to express a sustainable growth:
-(RBOT T OM − RT OP ) &lt; 0.25</p>
+<p><strong>Sustainable Growth</strong>: These systems sustained their ranking in the period under analysis, i.e., the number of stars they received in an one-year interval was sufficient to preserve their position in the ranking of popular systems. We use the following relation to express a sustainable growth:</p>
 
-<p>Table 2 shows the number of systems with a sustainable growth per language. As can be observed, 466 systems (22%) matched our definition for sustainable growth. Figures 3a to 3c show three examples of such systems: rails/rails, facebook/Shimmer, and Automattic/socket.io.</p>
+<p>(RBOT T OM − RT OP ) &lt; 0.25</p>
+
+<p>The following figures show three examples of such systems: <code>rails/rails</code>, <code>facebook/Shimmer</code>, and <code>Automattic/socket.io</code>.</p>
 
 <p><strong>Fast Growth:</strong> These are trending systems, which gained stars in a quantity that resulted in a relevant increase in their position in the ranking of popular systems, as captured by the following relation:
 (ROLD − RNOW ) &gt; 1 ∧ (Rt+1 ≤ Rt) in at least 90% of the weeks t</p>
@@ -95,7 +97,7 @@ django/django-old.</p>
 line the opposite. Two facts can be observed in this figure. First, there is a strong positive correlation between stars and forks (Spearman rank correlation coefficient = 0.55). Second, only a few systems have more forks than stars. As examples, we have a repository that just provides an example for forking a repository on GitHub (octocat/SpoonKnife) and a
 popular puzzle game (gabrielecirulli/2048), whose success motivated many forks with variations of the original implementation. Since the game can be downloaded directly from the web, we hypothesize that it receives most users’s feedback in the web and not on GitHub.</p>
 
-<p><strong>Clients:</strong> The number of clients is another clear measure of popularity. However, it is not trivial to access the clients of most GitHub applications. For example, mbostock/d3 is a popular visualization library, which can be imported by any Web page, including public and private ones. Therefore, it is not trivial to search for D3’s clients. For this reason, to correlate client usage and stars, we focus on a restricted set of applications, composed by Node.js based libraries hosted on the NPM registry. We first retrieved the number of dependents of the popular JavaScript applications in our dataset, using the NPM API. We then manually inspected the top-100 applications in terms of dependents to select the
+<p><strong>Clients:</strong> To correlate client usage and stars, we focus on a restricted set of applications, composed by Node.js based libraries hosted on the NPM registry. We first retrieved the number of dependents of the popular JavaScript applications in our dataset, using the NPM API. We then manually inspected the top-100 applications in terms of dependents to select the
 Node.js-based modules. Figure 4b shows a plot correlating the values we found for number of stars and number of dependents.
 As can be visually observed, there is a strong correlation between these two measures, with a Spearman’s rank correlation coefficient of 0.68.</p>
 
@@ -107,13 +109,18 @@ framework we found that:</p>
 
 <ul>
 <li>JavaScript monopolizes more than one third of the popular applications on GitHub; the next five languages (Ruby, Objective-C, Python, Java, and PHP) are responsible for another third of the popular applications. </li>
-<li>21% of the popular systems have a sustainable growth; 5% have a fast growth; and less than 1% have a slow growth. We also found 37 systems with a viral behavior.
-*The number of stars of a system tends to correlate not only with the number of forks, but also with its effective usage by other client applications, which reinforces the importance of stars as a real measure of a system’s popularity.</li>
+<li>21% of the popular systems have a sustainable growth; 5% have a fast growth; and less than 1% have a slow growth. We also found 37 systems with a viral behavior.</li>
+<li>The number of stars of a system tends to correlate not only with the number of forks, but also with its effective usage by other client applications</li>
 </ul>
+
+<h3>
+<a id="more-info" class="anchor" href="#more-info" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Info</h3>
+
+<p>Hudson Borges, Marco Tulio Valente, Andre Hora, Jailton Coelho. On the Popularity of GitHub Applications: A Preliminary Note. <a href="http://arxiv.org/abs/1507.00604">arXiv:1507.00604</a></p>
         </section>
 
         <footer>
-          Tracking-GitHub-popularity is maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a><br>
+          Tracking-GitHub-Popularity is maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a><br>
           This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
