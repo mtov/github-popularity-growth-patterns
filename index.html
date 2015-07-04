@@ -68,7 +68,7 @@
 
 <p><em>(RBottom − RTop ) &lt; 0.25</em></p>
 
-<p>The following figures shows three examples of systems with a sustainable growth in their number of stars. </p>
+<p>Examples of systems with a sustainable growth:</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/sustainable.png?raw=true" alt=""></p>
 
@@ -76,7 +76,7 @@
 
 <p><em>(ROld − RNow ) &gt; 1 ∧ (Rt+1 ≤ Rt)</em> in at least 90% of the weeks <em>t</em></p>
 
-<p>The following figures shows three examples of systems with a fast growth;</p>
+<p>Examples of systems with a fast growth:</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/fast.png?raw=true" alt=""></p>
 
@@ -85,17 +85,17 @@ experienced a relevant decrease in their rank position, as represented by the fo
 
 <p><em>(RNow − ROld) &gt; 1 ∧ (Rt+1 ≥ Rt)</em> in at least 90% of the weeks <em>t</em></p>
 
-<p>The following figures show three examples of systems with a slow growth in their number of stars.</p>
+<p>Examples of systems with a slow growth in their number of stars (which resulted in a decrease on their rank):</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/slow.png?raw=true" alt=""></p>
 
 <p><strong>Viral Growth:</strong> These systems experience a massive growth in their number of stars in a short period of time. Typically, viral growth results from word-of-mouth propagation in social networks (Twitter, Facebook, etc) or social news sites (Hacker News, Slashdot, Reddit, etc). We consider that viral growth happens when a systems receives most of its stars (i.e., &gt; 50%) in a single week. </p>
 
-<p>The following figure shows three examples of systems with a viral growth.</p>
+<p>Examples of systems with a viral growth:</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/viral.png?raw=true" alt=""></p>
 
-<p>The following table shows the number of systems with a sustainable, fast, slow, and viral growth per programming language.</p>
+<p>Systems with a sustainable, fast, slow, and viral growth per programming language:</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/growthpatterns.png?raw=true" alt=""></p>
 
@@ -104,18 +104,17 @@ experienced a relevant decrease in their rank position, as represented by the fo
 
 <p>We also investigate the correlation between the number of starts and two other measures: number of forks and number of clients.</p>
 
-<p><strong>Forks:</strong> The following figure shows plots correlating a system popularity and its number of forks. A logarithm scale is used in both axes. The line represents the identity relation: below the line are the systems with more stars than forks, and above the line the opposite. We can see that there is a strong positive correlation between stars and forks (Spearman rank correlation coefficient = 0.55). </p>
+<p><strong>Forks:</strong> The following figure shows a plot correlating a system popularity and its number of forks. A logarithm scale is used in both axes. The line represents the identity relation: below the line are the systems with more stars than forks, and above the line the opposite. We can see that there is a strong positive correlation between stars and forks (Spearman rank correlation coefficient = 0.55). </p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/forks.png?raw=true" alt=""></p>
 
 <p><strong>Clients:</strong> To correlate client usage and stars, we focus on a restricted set of applications, composed by Node.js based libraries hosted on the NPM registry. We first retrieved the number of dependents of the popular JavaScript applications in our dataset, using the NPM API. We then manually inspected the top-100 applications in terms of dependents to select the
-Node.js-based modules. Figure 4b shows a plot correlating the values we found for number of stars and number of dependents.
-As can be visually observed, there is a strong correlation between these two measures, with a Spearman’s rank correlation coefficient of 0.68.</p>
+Node.js-based modules. The following figure shows a plot correlating the values we found for number of stars and number of dependents. We found  a strong correlation between these two measures, with a Spearman’s rank correlation coefficient of 0.68.</p>
 
 <p><img src="https://github.com/aserg-ufmg/tracking-github-popularity/blob/master/images/clients.png?raw=true" alt=""></p>
 
 <h3>
-<a id="summing-up" class="anchor" href="#summing-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summing UP</h3>
+<a id="summing-up" class="anchor" href="#summing-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summing Up</h3>
 
 <p>We proposed a framework to assess and track the popularity of GitHub systems. Using this
 framework we found that:</p>
