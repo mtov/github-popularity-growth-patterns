@@ -3,31 +3,34 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <title>Tracking-GitHub-popularity by aserg-ufmg</title>
   </head>
 
   <body>
-    <header>
+    <div id="container">
       <div class="inner">
-        <h1>Tracking-GitHub-popularity</h1>
-        <h2>Tracking GitHub Popularity</h2>
-        <a href="https://github.com/aserg-ufmg/tracking-github-popularity" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+        <header>
+          <h1>Tracking-GitHub-popularity</h1>
+          <h2>Tracking GitHub Popularity</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/aserg-ufmg/tracking-github-popularity/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/aserg-ufmg/tracking-github-popularity/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/aserg-ufmg/tracking-github-popularity" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
           <h3>
 <a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h3>
 
@@ -53,25 +56,86 @@ number of stars are: Haskell (31 stars), Lua (24 stars), ActionScript (20), R (1
 
 <p>We consider popular the top-10% systems with more stars in our sample of 24,000 systems, which requires a system to have at least 1,459 stars (on May, 1st, 2015). Table 1 shows the number of popular systems on each language. Furthermore, we call very popular the top-1% systems with more stars, which requires a system to have at least 19,570 stars. Table 1 also shows the number of very popular systems, per programming language. Among these systems, 13 systems are implemented in JavaScript. Therefore, 35% of the popular systems are in JavaScript, while the language has 54% of the very popular ones.
 At the time of our analysis, twbs/bootstrap is the most popular repository, followed by angular/angular.js, and mbostock/d3.</p>
+
+<h3>
+<a id="popularity-growth-patterns" class="anchor" href="#popularity-growth-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popularity Growth Patterns</h3>
+
+<p>For evaluating popularity over time, we restrict the analysis to popular systems with at least 52 weeks (one year) in order to include reasonable historical data for evaluation. We also excluded twbs/bootstrap because we could not get all stars obtained by this system in the last 52 weeks. In this way, we study 2,138 popular systems (89% of our initial set of popular systems). For a given system, we define that Rt is its rank in our list of popular systems in the week t in a logarithm scale (base 2). Therefore, log2(1) + 1 ≤ Rt ≤ log2(2, 138) + 1 and 1 ≤ t ≤ 52. The ranks are considered in logarithm scale due to the right-skewed distribution in the number of stars of the the popular systems, as presented in Figure 2. The rank of the most popular system is 1. The earliest week is the week 1 (aka as OLD) and the latest one
+is 52 (aka as NEW ). We also define that RT OP and RBOT T OM are respectively the highest (best) and lowest rank (worse) of a system in the interval under analysis.</p>
+
+<p>We propose four patterns of popularity growth: Sustainable, Fast, Slow, and Viral. These patterns are described next:</p>
+
+<p><strong>Sustainable Growth</strong>: These systems sustained their ranking in the period under analysis, i.e., the number of stars they received in an one-year interval was sufficient to preserve their position in the ranking of popular systems. We use the following relation to express a
+sustainable growth:
+(RBOT T OM − RT OP ) &lt; 0.25</p>
+
+<p>In other words, a system with sustainable growth has minor variations in its rank during
+the period under analysis, inferior to 0.25 points in a logarithmic scale. Table 2 shows the
+number of systems with a sustainable growth per language. As can be observed, 466 systems
+(22%) matched our definition for sustainable growth. Figures 3a to 3c show three examples
+of such systems: rails/rails, facebook/Shimmer, and Automattic/socket.io.</p>
+
+<p><strong>Fast Growth:</strong> These are trending systems, which gained stars in a quantity that resulted
+in a relevant increase in their position in the ranking of popular systems, as captured by the
+following relation:
+(ROLD − RNOW ) &gt; 1 ∧ (Rt+1 ≤ Rt) in at least 90% of the weeks t
+That is to say, a system with fast growth has now a rank position that is expressively better
+than its position one year ago, as expressed by a difference of at least one point in a
+logarithmic scale. Moreover, in at least 90% of the weeks under analysis the system preserved
+or improved its position in the ranking, compared to the previous week. Table 2
+shows the number of such systems per language. As can be observed, 100 systems (5%)
+matched our definition for fast growth, including 44 systems in JavaScript and 18 systems
+in Java. Figures 3d to 3f show three examples of such systems: angular/angular.js,
+docker/compose, and apache/spark.</p>
+
+<p><strong>Slow Growth:</strong> These are systems receiving few stars on each week. As a result, they
+experienced a relevant decrease in their rank position, as represented by the following relation:
+(RNOW − ROLD) &gt; 1 ∧ (Rt+1 ≥ Rt) in at least 90% of the weeks t
+A system with slow growth has now a ranking that is one logarithmic degree greater than
+its ranking one year ago. Moreover, in at least 90% of the weeks under analysis the system
+preserved or decreased its position in the ranking, compared to the previous week. Table 2
+shows the number of systems with slow growth per language. As presented in this table, 12
+systems (0.5%) matched our definition for this pattern. Figures 3g to 3i show three examples
+of such systems: jquery/jquery, jquery-ui-bootstrap/jquery-ui-bootstrap, and
+django/django-old.</p>
+
+<p><strong>Viral Growth:</strong> These systems experience a massive growth in their number of stars in a short period of time. Typically, viral growth results from word-of-mouth propagation in social networks (Twitter, Facebook, etc) or social news sites (Hacker News, Slashdot, Reddit, etc). In this paper, we consider that viral growth happens when a systems receives most of its stars (i.e., &gt; 50%) in a single week. Table 2 also shows the number of popular systems classified as viral. We found 37 viral systems (2%) and JavaScript is the language with the highest number of such systems (13 systems). Figures 3j to 3k show three examples of systems with a viral growth. We can see that they received more than 1,300 stars in a single week, and very few stars (if any) in the other weeks. To illustrate the importance of social sites on viral growth, we checked that a post on Khan/KaTeX (a JavaScript library for TEX math rendering) was heavily commented and upvoted at Hacker News in the week the system experienced the massive peak in the number of stars. facebook/augmented-traffic-control (a
+network connection simulator) and github/git-lfs (a tool for managing large files with Git) are other systems that attracted media coverage exactly in the week they received more than 1,800 stars and 1,300 stars, respectively.</p>
+
+<h3>
+<a id="correlating-popularity-with-forks-and-usage" class="anchor" href="#correlating-popularity-with-forks-and-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlating Popularity with Forks and Usage</h3>
+
+<p>To clarify the credibility of the number of stars as measure for a system’s popularity, we investigate the correlation between this measure and two other ones: number of forks and number of clients.</p>
+
+<p><strong>Forks:</strong> Figure 4a shows plots correlating a system popularity
+and its number of forks. A logarithm scale is used in both axes. The line represents the
+identity relation: below the line are the systems with more stars than forks, and above the
+line the opposite. Two facts can be observed in this figure. First, there is a strong positive
+correlation between stars and forks (Spearman rank correlation coefficient = 0.55). Second,
+only a few systems have more forks than stars. As examples, we have a repository that just
+provides an example for forking a repository on GitHub (octocat/SpoonKnife) and a
+popular puzzle game (gabrielecirulli/2048), whose success motivated many forks with
+variations of the original implementation. Since the game can be downloaded directly from
+the web, we hypothesize that it receives most users’s feedback in the web and not on GitHub.</p>
+
+<p><strong>Clients:</strong> The number of clients is another clear measure of popularity. However, it is not
+trivial to access the clients of most GitHub applications. For example, mbostock/d3 is a
+popular visualization library, which can be imported by any Web page, including public and
+private ones. Therefore, it is not trivial to search for D3’s clients. For this reason, to correlate
+client usage and stars, we focus on a restricted set of applications, composed by Node.jsbased
+libraries hosted on the NPM registry. Node.js is a popular, runtime environment
+for server-side and networking JavaScript applications. NPM (Node Package Manager) is a
+centralized repository for hosting the production version of JavaScript modules. Although,
+NPM can host any JavaScript module, it is the de facto platform for hosting Node.js-based</p>
         </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/aserg-ufmg/tracking-github-popularity/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/aserg-ufmg/tracking-github-popularity/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+        <footer>
+          Tracking-GitHub-popularity is maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-          <p class="repo-owner"><a href="https://github.com/aserg-ufmg/tracking-github-popularity"></a> is maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+        
       </div>
     </div>
-
-  
   </body>
 </html>
