@@ -1,37 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Tracking-GitHub-popularity : Tracking GitHub Popularity">
+    <title>Tracking-GitHub-popularity by aserg-ufmg</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Tracking-GitHub-popularity</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tracking-GitHub-popularity</h1>
+        <p>Tracking GitHub Popularity</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/aserg-ufmg/tracking-github-popularity">View on GitHub</a>
+        <p class="view"><a href="https://github.com/aserg-ufmg/tracking-github-popularity">View the Project on GitHub <small>aserg-ufmg/tracking-github-popularity</small></a></p>
 
-          <h1 id="project_title">Tracking-GitHub-popularity</h1>
-          <h2 id="project_tagline">Tracking GitHub Popularity</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/aserg-ufmg/tracking-github-popularity/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/aserg-ufmg/tracking-github-popularity/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/aserg-ufmg/tracking-github-popularity/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/aserg-ufmg/tracking-github-popularity/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/aserg-ufmg/tracking-github-popularity">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>We describe a framework for assessing the popularity of open source systems hosted at GitHub. GitHub provides an explicit
+feature for users to manifest their interest or satisfaction with a hosted repository: the stargazers button. Like in social websites, users can like or upvote a repository by clicking in this button. Therefore, we assume in this paper that the number of stars of a repository is a reliable and simple measure of its popularity in GitHub ecosystem. We then make
+three contributions: </p>
+
+<ul>
+<li>We propose a criteria to classify popular and very popular systems at GitHub</li>
+<li>We propose four growth patterns to describe the evolution of the number of stars of a system over time </li>
+<li>We check the importance of the stargazers measure, by correlating the number of stars with other measures such as forks
+and client usage </li>
+</ul>
+
+<p>We illustrate the application of our framework on a snapshot of GitHub, collected on May, 1st, 2015. </p>
+
+<h3>
 <a id="measuring-popularity" class="anchor" href="#measuring-popularity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Measuring Popularity</h3>
 
 <p>We consider the top-24 programming languages with more repositories in GitHub, which are the languages classified as popular by the GitHub advanced search engine. Figure 1 shows the distribution of the number of stars in the top-1,000 repositories of such languages. JavaScript is the language with the highest number of popular systems; in our sample of
@@ -41,17 +54,12 @@ number of stars are: Haskell (31 stars), Lua (24 stars), ActionScript (20), R (1
 <p>We consider popular the top-10% systems with more stars in our sample of 24,000 systems, which requires a system to have at least 1,459 stars (on May, 1st, 2015). Table 1 shows the number of popular systems on each language. Furthermore, we call very popular the top-1% systems with more stars, which requires a system to have at least 19,570 stars. Table 1 also shows the number of very popular systems, per programming language. Among these systems, 13 systems are implemented in JavaScript. Therefore, 35% of the popular systems are in JavaScript, while the language has 54% of the very popular ones.
 At the time of our analysis, twbs/bootstrap is the most popular repository, followed by angular/angular.js, and mbostock/d3.</p>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Tracking-GitHub-popularity maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/aserg-ufmg">aserg-ufmg</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
