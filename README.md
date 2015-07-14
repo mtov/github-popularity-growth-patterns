@@ -1,2 +1,2 @@
 # GitHub-Popularity
-Assessing the Popularity of GitHub Applications
+Assessing the Popularity of GitHub Software
