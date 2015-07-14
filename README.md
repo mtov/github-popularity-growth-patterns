@@ -1,2 +1,2 @@
 # tracking-popularity-github
-Tracking the Popularity of GitHub Applications
+Assessing the Popularity of GitHub Applications
